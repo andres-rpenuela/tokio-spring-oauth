@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "264f8f94-9f54-4d37-885c-7816756b19a9",
+		"name": "OAuth2.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6232761"
+	},
+	"item": [
+		{
+			"name": "Oauth 2.0. Server Authorization",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "secret",
+						"username": "oidc-client"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "code",
+							"value": "TxVPP6HgG9XYyacyDfOiFzKktaR6O5IFmJxM8qqkUFDicEErVuKs6aiI7cUoyOXDVUdGLpkE3GCY4NnrIbcP_rerNFGRuxp-AzPASbJwx4bCSifcBsUD9Hoxw32Mii9K",
+							"description": "code return web client:https://oauthdebugger.com/",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://oauthdebugger.com/debug",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:9000/oauth2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Oauth 2.0. Server Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "secret3",
+						"username": "oauth-client"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "code",
+							"value": "TxVPP6HgG9XYyacyDfOiFzKktaR6O5IFmJxM8qqkUFDicEErVuKs6aiI7cUoyOXDVUdGLpkE3GCY4NnrIbcP_rerNFGRuxp-AzPASbJwx4bCSifcBsUD9Hoxw32Mii9K",
+							"description": "code return web client:https://oauthdebugger.com/",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://oauthdebugger.com/debug",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "scope",
+							"value": "read",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://127.0.0.1:9000/oauth2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Resource Server",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJraWQiOiI4ZTIxZjllZC1iYmZkLTQ0MDQtOGM0OC1lY2U3ZTQwMjZhMWUiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJvYXV0aC1jbGllbnQiLCJhdWQiOiJvYXV0aC1jbGllbnQiLCJuYmYiOjE3NDE1MjYyOTMsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6OTAwMCIsImV4cCI6MTc0MTUyNjU5MywiaWF0IjoxNzQxNTI2MjkzLCJqdGkiOiI3MGEwYzZmOC1jMWZjLTQ4MzItODNlZS0zZDI1YTk3ZDMyYmEifQ.lorz15aRsToBSGv7FGnG-PCzMY2jMhOcAf5nd3UdWEQwNlIesg5Uzr2rKgvQh-rISfgJOMdFzetVgnXDwyFM6St5nJGU_HuuqxeWMkiUhV4XisAgUwv2BUsrB0JQZTOpYKQiWuLcVWpQheeVbhq0nFcEHubDqkwm_-NzOkloOhkhDofkWxOsbVkxa6PpZb5Jt7zhnFgPyK_jjACNU5MucyLN4WjqCI0KInLZtV_eBlPxoeu6-ixm46cxW2lwAvdsKsBtvfrbUw_c1E-ey7zxvvJ7l0s-iJZ_De9_4IbK08QfvVwrpFeNxrOc6sXnW7j-FRZ5LUrcolDqFoPtmp1EIQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8081/api/user"
+			},
+			"response": []
+		},
+		{
+			"name": "Resource Server Hello",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJraWQiOiI4ZTIxZjllZC1iYmZkLTQ0MDQtOGM0OC1lY2U3ZTQwMjZhMWUiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJvYXV0aC1jbGllbnQiLCJhdWQiOiJvYXV0aC1jbGllbnQiLCJuYmYiOjE3NDE1MjYyOTMsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6OTAwMCIsImV4cCI6MTc0MTUyNjU5MywiaWF0IjoxNzQxNTI2MjkzLCJqdGkiOiI3MGEwYzZmOC1jMWZjLTQ4MzItODNlZS0zZDI1YTk3ZDMyYmEifQ.lorz15aRsToBSGv7FGnG-PCzMY2jMhOcAf5nd3UdWEQwNlIesg5Uzr2rKgvQh-rISfgJOMdFzetVgnXDwyFM6St5nJGU_HuuqxeWMkiUhV4XisAgUwv2BUsrB0JQZTOpYKQiWuLcVWpQheeVbhq0nFcEHubDqkwm_-NzOkloOhkhDofkWxOsbVkxa6PpZb5Jt7zhnFgPyK_jjACNU5MucyLN4WjqCI0KInLZtV_eBlPxoeu6-ixm46cxW2lwAvdsKsBtvfrbUw_c1E-ey7zxvvJ7l0s-iJZ_De9_4IbK08QfvVwrpFeNxrOc6sXnW7j-FRZ5LUrcolDqFoPtmp1EIQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8081/hello"
+			},
+			"response": []
+		}
+	]
+}

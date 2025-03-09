@@ -131,7 +131,21 @@ public class SecurityConfig {
                 .scope("write")
                 //.clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
                 .build();
-        return new InMemoryRegisteredClientRepository(oidcClient,myClient);
+
+        //         return new InMemoryRegisteredClientRepository(oidcClient,myClient);
+
+        RegisteredClient oauthClient = RegisteredClient.withId(UUID.randomUUID().toString())
+                .clientId("oauth-client")
+                .clientSecret("{noop}secret3")
+                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+                .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
+                .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
+                .scope(OidcScopes.OPENID)
+                .scope(OidcScopes.PROFILE)
+                .scope("read")
+                .scope("write")
+                .build();
+        return new InMemoryRegisteredClientRepository(oidcClient,myClient,oauthClient);
     }
 
     @Bean
