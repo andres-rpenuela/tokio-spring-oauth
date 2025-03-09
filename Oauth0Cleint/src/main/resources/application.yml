@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: Oauth0Cleint
+
+server:
+  port: 3000
+# src/main/resources/application.yml
+okta:
+  oauth2:
+    issuer: https://dev-ifodqc0dh5mufyq4.us.auth0.com/
+    client-id: zvgoFjXhhnmhLpPHnNBCTlZQyhEDgZ0A
+    client-secret: J0KicKnoOyembIrAeJPwvEZOUV5e2qZm-YbOpuXmLp_Tedbkstk9g8nM7f2h9xib
